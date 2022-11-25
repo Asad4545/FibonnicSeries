@@ -1,0 +1,45 @@
+using System;
+
+namespace MultipleOfThreeAndFive
+{
+    public class Program
+    {
+      static void Main(string[] args)
+        {
+          program obj = new program();
+          obj.Fibonnic_sequence(4000000)
+        }
+        
+        public void Fibonnic_sequence(int x)
+        {
+            int sum=0, sum1 = 0, sum2 = 1, fab ;
+
+            for (int i = 2; i <= x; i++)
+            {
+                
+                fab = sum1 + sum2;
+                if (fab < 4000000)
+                {
+                    Console.Write(fab + ",");
+
+                    sum1 = sum2;
+                    sum2 = fab;
+                }
+
+                if(fab %2 == 0)
+                {
+                    if(sum<4000000)
+                    sum = sum + fab;
+   
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Sum of the even numbers in this series is " + sum);
+            
+        }       
+
+    }
+  
+}
+
